@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:MasterPol.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ИС Мастер Пол - Список партнеров">
+      Title="ИС Мастер Пол - Список партнеров"
+      Background="#FFFFFF">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -21,13 +22,13 @@
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="450"></ColumnDefinition>
+                            <ColumnDefinition Width="400"></ColumnDefinition>
                             <ColumnDefinition Width="100"></ColumnDefinition>
                             <ColumnDefinition Width="170"></ColumnDefinition>
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-
-                        <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                        <StackPanel Grid.Column="0" 
+                                    VerticalAlignment="Center">
                             <TextBlock>
                                 <Run Text="{Binding Partner.TypeOfPartner.TypeOfPartner1}"/>
                                 <Run Text="|"/>
@@ -37,10 +38,8 @@
                             <TextBlock Text="{Binding Partner.PhoneOfPartner, StringFormat={}{0}}"></TextBlock>
                             <TextBlock Text="{Binding Partner.Raiting, StringFormat={}Рейтинг: {0}}"></TextBlock>
                         </StackPanel>
-
-                        <TextBlock Grid.Column="1" VerticalAlignment="Top" Margin="4"
+                        <TextBlock Grid.Column="1" VerticalAlignment="Top"
                                    Text="{Binding Discount, StringFormat={}{0}%}"></TextBlock>
-
                         <Button x:Name="EditButton" Grid.Column="2" 
                                 Content="Редактировать"
                                 Click="EditButton_Click"></Button>

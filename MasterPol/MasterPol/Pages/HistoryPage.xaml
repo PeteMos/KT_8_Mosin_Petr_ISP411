@@ -5,10 +5,32 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MasterPol.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="HistoryPage">
+      d:DesignHeight="650" d:DesignWidth="1000"
+      Title="ИС Мастер Пол - История реализации"
+      Background="#FFFFFF">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
+        </Grid.RowDefinitions>
+        <DataGrid x:Name="HistoryDataGrid" 
+                  Grid.Row="0" 
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Наименование" 
+                    Binding="{Binding Production.Production1}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Количество продукции"
+                    Binding="{Binding CountOfProduction}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата продажи"
+                    Binding="{Binding DateOfSale, StringFormat='{}{0:yyyy-MM-dd}'}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button x:Name="BackButton" Grid.Row="1" 
+                Content="Назад" HorizontalAlignment="Center"
+                Click="BackButton_Click"></Button>
     </Grid>
 </Page>
